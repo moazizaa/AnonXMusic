@@ -1,7 +1,7 @@
-{
-    "name": "ᴀɴᴏɴ ダ ᴍᴜsɪᴄ",
+{ 
+    "name": "العزايزي",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg",
+    "logo": "https://telegra.ph/file/19d68d531fd2f6f96e368.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -14,17 +14,17 @@
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "21055447",
+        "value": "20368427",
         "required": true
       },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "68194b5fa0ba1fcd11efa156e5e0fd20",
+        "value": "c242a0a46bf4b4a5ea2cd826aea6e9fe",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "5548381739:AAGZ7VbILBzFAWqlImlD0RiZPrswuiEbWzw",
+        "value": "",
         "required": true
       },
       "MONGO_DB_URI": {
@@ -39,7 +39,7 @@
       },
       "STRING_SESSION": {
         "description": "A Pyrogram v2 String Session from @StringFatherBot on Telegram.",
-        "value": "BACk8x2ebnhnqmG919tWQJTZmRebOdHywu5A3lo6exDXaa7rFBcuk705rjGSiyRnTKA5B7oK3zr9MC7AidDS18vG4g1wtiacxedyKfvz2QvSz3KW9alGN_Dm914_2LP7qylUrfV1FoH43IhCBjoISzWyb694D8lwGpkLLv7iOA4fycmM_Z64u-LQEakngjy6S-cVBoYvyBpDprQYK1gFUkLMvt3JvP8C_LV71ngVPPW8b6OvNlWMsMW4nYEdhy87Lr6iKB2VMYdweExYB6YUGj10AZO_7sNCz6eNjcDJXTwRMAlDRrZxB5PUr1jF3aCvDGoiGi35C2OIwg_1yEd-8F4UAAAAAYXCyYkA",
+        "value": "",
         "required": true
       },
       "HEROKU_API_KEY": {
@@ -49,12 +49,12 @@
       },
       "HEROKU_APP_NAME": {
         "description": "Your heroku app name",
-        "value": "senzir678907",
+        "value": "alazizymostafa",
         "required": false
       },
       "LOGGER_ID": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": "-1002102614075",
+        "value": "-1001851481993",
         "required": true
       }
     },
