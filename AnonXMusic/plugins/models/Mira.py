@@ -235,7 +235,7 @@ REPLY_MESSAGE_BUTTONSS = [
 ]
 
 
-@app.on_message(filters.regex & filters.command(["الاوامر"],""))
+@app.on_message(filters.regex & filters.command("^/AFYN"))
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
