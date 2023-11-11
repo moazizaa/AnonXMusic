@@ -17,7 +17,6 @@ from pyrogram import filters, Client
 from AnonXMusic import app
 from config import BANNED_USERS
 
-)
 
 tz = pytz.timezone('Africa/Cairo')
 
