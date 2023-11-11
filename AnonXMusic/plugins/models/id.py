@@ -1,40 +1,32 @@
-from pyrogram import filters
-from pyrogram.errors import FloodWait
-from pyrogram.raw import types
+import asyncio
+from pyrogram import Client, filters
 from AnonXMusic import app
 import random
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+
 
 iddof = []
-@app.on_message(
-    filters.command(["قفل الملصقات","تعطيل الملصقات"],"")
- 
-   
-)
-async def block_stickers(client:Client, message:Message):
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-        if message.chat.id in iddof:
-            return await message.reply_text(f"يا {message.from_user.mention} الملصقات مقفله من قبل")
-        iddof.append(message.chat.id)
-        return await message.reply_text(f"تم قفل الملصقات \n\n من قبل ←{message.from_user.mention}")
-    else:
-        return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا")
-    
-@app.on_message(
-    filters.command(["فتح الملصقات","تفعيل الملصقات"],"")
- 
-   
-)
-async def block_stickers(client:Client, message:Message):
-    get = await client.get_chat_member(message.chat.id, message.from_user.id)
-    if get.status in ["creator", ChatMemberStatus.ADMINISTRATOR]:
-        if message.chat.id in iddof:
-            return await message.reply_text(f"يا {message.from_user.mention} الملصقات مقفله من قبل")
-        iddof.append(message.chat.id)
-        return await message.reply_text(f"تم قفل الملصقات \n\n من قبل ←{message.from_user.mention}")
-    else:
-        return await message.reply_text(f"يا {message.from_user.mention} انت لست مشرفا")
-    
+@app.on_message(filters.command(["قفل الايدي","تعطيل الايدي"], ""))
+async def iddlock(client, message):
+   get = await app.get_chat_member(message.chat.id, message.from_user.id)
+   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
+      if message.chat.id in iddof:
+        return await message.reply_text("تم معطل من قبل🔒")
+      iddof.append(message.chat.id)
+      return await message.reply_text("تم تعطيل الايدي بنجاح ✅🔒")
+   else:
+      return await message.reply_text("لازم تكون ادمن يبني علشان اسمع كلامك")
+
+@app.on_message(filters.command(["فتح الايدي","تفعيل الايدي"], ""))
+async def iddopen(client, message):
+   get = await app.get_chat_member(message.chat.id, message.from_user.id)
+   if get.status in ["creator", ChatMemberStatus.ADMINISTRATOR]:
+      if not message.chat.id in iddof:
+        return await message.reply_text("الايدي مفعل من قبل ✅")
+      iddof.remove(message.chat.id)
+      return await message.reply_text("تم فتح الايدي بنجاح ✅🔓")
+   else:
+      return await message.reply_text("لازم تكون ادمن يبني علشان اسمع كلامك")
 
 
 
