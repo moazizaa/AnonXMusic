@@ -18,8 +18,6 @@ from AnonXMusic import app
 from config import BANNED_USERS
 
 
-tz = pytz.timezone('Africa/Cairo')
-
 chat = []
 
 @app.on_message(filters.text & ~filters.private, group = 20)
