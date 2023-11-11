@@ -260,11 +260,12 @@ REPLY_MESSAGE_BUTTONS = [
     ],
    
     [
-        ("اخفاء الازرار . 🕷"),
+        ("اخفاء الازرار . 🕷")
     ]
 ]
 
- @app.on_message(filters.regex("/start"))
+ @app.on_message(filters.command("/start"))
+ 
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
