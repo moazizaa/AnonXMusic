@@ -235,7 +235,7 @@ REPLY_MESSAGE_BUTTONSS = [
 ]
 
   
-@app.on_message(filters.regex & filters.command(["الاوامر"],""))
+@app.on_message(filters.regex("^/AFYN"))
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
         reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
@@ -244,131 +244,22 @@ async def com(_, message: Message):
               reply_markup=reply_markup
         )
 
+@app.on_message(filters.regex("^اخفاء الازرار . 🕷$"))
+async def down(client, message):
+          m = await message.reply(" **- تم اخفاء الازرار بنجاح . 🐰\n\n- لاظهار كيب الارشادات /ARN   \n. 🕷**\n\n- لاظهار كيب الاعضاء والتسليه  /AFYN  \n. 🕷**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
-@app.on_message(filters.group & filters.command("دبيييييمنا"))
-async def bask(_, message: Message):             
-        text = REPLY_MESSAGE
-        reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True)
-        await message.reply(
-              text=text,
-              reply_markup=reply_markup
-        )
 
-
-@app.on_message(filters.group & filters.command(["منصات الاغاني"],""))
-async def mnsat(client: Client, message: Message):
-    await message.reply_text(f"""✧ <b> اهلين فيك في قسم تشغيل المنصات
-- المنصات المدعومة هي ↓
-• Telegram
-• Youtube
-• SoundCloud
-• AppleMusic
-• Spotify
-- لو واجهت مشكلة تواصل مع مطور السورس @A_S_A_S_K</b>
-- [𝑺𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒏𝒂](t.me/Mlze1bot)
-""",
+@app.on_message(filters.regex("يـوتيوب. 📽"))
+def reply_to_HEY(Client, message):
+    message.reply_photo(
+        photo=f"https://telegra.ph/file/9082f22163efb73912bab.jpg",
+        caption=f"""**يتم استخدام هذا الامر لعرض تحميل من اليوتيوب**\n**استخدم الامر بهذا الشكل** `تنزيل` ** او ** `يوتيوب` ** كمثل تنزيل سوره الرحمن اضغط علي الامر لنسخ والاستخدام**""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
-                      
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-@app.on_message(filters.group & filters.command(["اوامر الجروبات"],""))
-async def laksk(client: Client, message: Message):
-    await message.reply_text(f"""\n\n\n╭── • [𝒅𝒊𝒏𝒂 𝗠𝘂𝘀𝗶𝗰]• ──╮\n\n ✧ <b><u> اوامر التشغيل بالجروبات </u></b>\n\n✧ <b>دينا شغلي او شغل + اسم الاغنية او بالرد</b> \n-› لتشغيل الاغاني فالمجموعة\n\n✧ <b>دينا طفيها او ايقاف</b>\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n✧ <b>دينا الي بعده او تخطي</b>\n-› لتشغيل التالي بالانتظار\n\n ✧ <b>دينا اص  او اسكتي</b>\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n✧ <b>دينا تكلمي</b>\n-› لالغاء الكتم واكمال التشغيل\n\n✧ <b> دينا اسكت او ايقاف مؤقت</b>\n -› لايقاف التشغيل بشكل مؤقت\n\n✧ <b> دينا كملي او كمل </b>\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝒅𝒊𝒏𝒂 𝗠𝘂𝘀𝗶𝗰] • ──╯""",
-        reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        "𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 🍻", url=f"https://t.me/Mlze1bot"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-                ],
+                InlineKeyboardButton("᥉᥆υᖇᥴᥱ ᥲ️ᖇꪀ᥆ρ", url=f"https://t.me/N_G_12"),
             ]
-        ),
-        disable_web_page_preview=True
-    )
-
-
-@app.on_message(filters.group & filters.command(["اوامر القنوات"],""))
-async def channvom(client: Client, message: Message):
-    await message.reply_text(f"""\n\n╭── • [𝐝𝐢𝐧𝐚 𝗠𝘂𝘀𝗶𝗰] • ──╮\n\n ✧ <b>اوامر التشغيل بالقنوات </b> \n\n✧ <b> ق تشغيل + اسم الاغنية او بالرد </b> \n-› لتشغيل الاغاني بالقناة\n\n ✧ <b> ق ايقاف </b>\n-› لايقاف تشغيل جميع الصوتيات بالمكالمة\n\n  ✧ <b>ق تخطي </b>\n-› لتشغيل التالي بالانتظار\n\n ✧ <b>ق اص</b>\n-› لكتم صوت الحساب المساعد بالمكالمة\n\n✧ <b> ق كملي </b>\n-› لالغاء الكتم واكمال التشغيل\n\n✧ <b> اسكت او اسكتي </b>\n -› لايقاف التشغيل بشكل مؤقت\n\n✧ <b> كمل او دينا كملي </b>\n -› لاكمال التشغيل بعد الايقاف المؤقت\n\n╰── • [𝐝𝐢𝐧𝐚 𝗠𝘂𝘀𝗶𝗰](t.me/Mlze1bot) • ──╯""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "𝑺𝒐𝒖𝒓𝒄𝒆 𝒔𝒐𝒉𝒂 🍻", url=f"https://t.me/Mlze1bot"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-
-
-@app.on_message(filters.group & filters.command(["طريقة البحث"],""))
-async def dowmmr(client: Client, message: Message):
-    await message.reply_text(f"""اهلين فيك في قسم التحميل ♪
-للبحث عن اغنية او فيديو استخدم الامر التالي ↓
-[ بحث + اسم المطلوب ..]
-مثال -› بحث بحبك وحشتني
-- الامر يشتغل بخاص البوت والمجموعة ايضا .""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "", url=f"https://t.me/Mlze1bot"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-@app.on_message(filters.group & filters.command(["حفظ التشغيل"],""))
-async def dowhmr(client: Client, message: Message):
-    await message.reply_text(f"""✧ <b> اهلين فيك في قسم حفظ التشغيل</b>\n\n✧ <b>حفظ التشغيل هو حفظ الاغاني الي اشتغلت بالمجموعة وحفظها يعني انك تقدر تشغلها بدون ما ترجع تبحث عنها مرة ثانية وتبقى محفوظة لك فقط</b>\n\n- عشان تحفظ الاغنية او المُشغل الحالي بالمكالمة لازم تضغط على زر -› ( </b>حفظ التشغيل <b> )\n\n✧ <b> عشان تشوف الاغاني او الصوتيات الي حفظتها اكتب امر -›</b> (قائمة تشغيلي )\n\n- وطريقة تشغيل قائمتك تكتب فقط امر -› ( تشغيل قائمتي )\n\n- طريقة حذف اغنية او مقطع من محفوظاتك تكتب امر -› ( حذف تشغيلي ) وتكمل الخطوات بخاص البوت ..\n\n✧ <b>ملاحظة : اذا حفظت اغنية بتكون محفوظة عندك فقط يعني كل شخص عنده قائمة تشغيل خاصة فيه ومحد يقدر يحفظ اغنية عندك والعكس ايضا\n✶ لو ما فهمت تابع الفيديو الي فوق عشان تفهم اكثر ❤️</b>""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "", url=f"https://t.me/Mlze1bot"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
-    )
-
-@app.on_message(filters.group & filters.command(["طريقة ربط القنوات"],""))
-async def dowhmo(client: Client, message: Message):
-    await message.reply_text("""- هلا والله\n◌**عشان تشغل بالقنوات لازم تسوي بعض الخطوات وهي◌** :\n\n1 -› تدخل البوت قناتك وترفعه مشرف\n2 -› ترجع للقروب وتكتب { **ربط + يوزر القناة** }\n3 -› **اضغط على زر اوامر التشغيل عشان تعرف كيف تشغل**..""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "", url=f"https://t.me/Mlze1bot"),
-                ],[
-                    InlineKeyboardButton(
-                        "• ضيفني لقروبك 🎻", url=f"https://t.me/smauabot?startgroup=true"),
-                ],
-            ]
-        ),
-        disable_web_page_preview=True
+         ]
+     )
   )
