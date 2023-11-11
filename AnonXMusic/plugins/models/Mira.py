@@ -16,7 +16,7 @@ from pyrogram.types import (
 from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from config import BANNED_USERS
 
-@app.on_message(filters.regex("^ميوزك$") & filters.group & ~BANNED_USERS) 
+@app.on_message(filters.private("^ميوزك$") & filters.group & ~BANNED_USERS) 
 @AdminRightsCheck
 async def khalid(client: Client, message: Message):
     user = message.from_user.mention
@@ -33,7 +33,7 @@ async def khalid(client: Client, message: Message):
 
 
 
-@app.on_message(filters.regex("^دينا الاحصائيات$") & filters.user(6228635168))
+@app.on_message(filters.private("^دينا الاحصائيات$") & filters.user(6228635168))
 async def ahtek(client: Client, message: Message):
     m_reply = await message.reply_text(f"✧ <b> اهلين مطوري ارحب</b>\n✧ <b> هذي احصائيات دينا يا روحي :</b>\n\n-› عدد المشتركين : 12478\n-› عدد المجموعات : 11346\n\n• تم زيادة 1204 مشترك ونقص 2103 مجموعة  في اخر 24 ساعة\n\n- عدد الطرد من بوتات اخرى : 843\n- طرد يدوي : 1302\n\n╼╾")
     await m_reply_text("")
@@ -60,7 +60,7 @@ def vgdg(client,message):
 
 
 
-@app.on_message(filters.regex("^رابط الحذف$"))
+@app.on_message(filters.private("^رابط الحذف$"))
 async def delet(client: Client, message: Message):
     await message.reply_text(f"""✧ <b> اهلين ياحلو</b>\n✧ <b> هذي روابط حذف جميع مواقع التواصل بالتوفيق</b>""",
         reply_markup=InlineKeyboardMarkup(
@@ -147,7 +147,7 @@ REPLY_MESSAGE_BUTTONS = [
 
   
 
-@app.on_message(filters.regex("^داااااااينا$") & filters.group & ~BANNED_USERS)
+@app.on_message(filters.private("^داااااااينا$") & filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
@@ -158,7 +158,7 @@ async def cpanel(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("اخفاء الازرار") & filters.group)
+@app.on_message(filters.private("اخفاء الازرار") & filters.group)
 async def down(client, message):
           m = await message.reply("✧ <u> ابشر تم اخفاء الازرار بنجاح</u>\n✧ <b> لو تبي تطلعها مرة ثانية اكتب دينا</b>", reply_markup= ReplyKeyboardRemove(selective=True))
 
@@ -273,13 +273,13 @@ async def com(_, message: Message):
               reply_markup=reply_markup
         )
 
-@app.on_message(filters.regex("^اخفاء الازرار . 🕷$"))
+@app.on_message(filters.private("^اخفاء الازرار . 🕷$"))
 async def down(client, message):
           m = await message.reply(" **- تم اخفاء الازرار بنجاح . 🐰\n\n- لاظهار كيب الارشادات /ARN   \n. 🕷**\n\n- لاظهار كيب الاعضاء والتسليه  /AFYN  \n. 🕷**", reply_markup= ReplyKeyboardRemove(selective=True))
 
 
 
-@app.on_message(filters.regex("يـوتيوب. 📽"))
+@app.on_message(filters.private("يـوتيوب. 📽"))
 def reply_to_HEY(Client, message):
     message.reply_photo(
         photo=f"https://telegra.ph/file/9082f22163efb73912bab.jpg",
