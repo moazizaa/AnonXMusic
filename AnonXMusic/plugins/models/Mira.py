@@ -263,7 +263,7 @@ REPLY_MESSAGE_BUTTONS = [
         ("اخفاء الازرار . 🕷"),
     ]
 ]
- @app.on_message(filters.command("/start")) & filters.private)
+ @app.on_message(filters.private("^/AFYN"))
 
 async def com(_, message: Message):             
         text = REPLY_MESSAGEE
