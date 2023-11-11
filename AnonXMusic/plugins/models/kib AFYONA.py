@@ -1,20 +1,19 @@
-from pyrogram import filters
-
-from AnonXMusic import YouTube, app
-from AnonXMusic.utils.channelplay import get_channeplayCB
-from AnonXMusic.utils.decorators.language import languageCB
-from AnonXMusic.utils.stream.stream import stream
-from pyrogram import filters
-from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
-from pyrogram.types import Message
-
-from AnonXMusic import app
-from AnonXMusic.utils.database import set_cmode
-from AnonXMusic.utils.decorators.admins import AdminActual
 import asyncio
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton 
-from pyrogram import filters, Client
-from AnonXMusic import app
+
+from pyrogram import Client, filters
+import config
+from AnonXMusic.utils.decorators import AdminRightsCheck
+from AnonXMusic.utils.decorators import AdminActual
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    ReplyKeyboardMarkup,
+    ReplyKeyboardRemove,
+    InputMediaPhoto,
+    Message,
+)
+from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from config import BANNED_USERS
 
 
@@ -98,9 +97,9 @@ REPLY_MESSAGE_BUTTONS = [
 ]
 
 @app.on_message(filters.regex("^/AFYN"))
-async def cpanel(_, message: Message):             
-        text = REPLY_MESSAGE
-        reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, resize_keyboard=True, selective=True)
+async def com(_, message: Message):             
+        text = REPLY_MESSAGEE
+        reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONSS, resize_keyboard=True, selective=True)
         await message.reply(
               text=text,
               reply_markup=reply_markup
